@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+    <canvas width="600" height="400"> /canvas>
+
+        <script>
+
+            var pantalla = document.querySelector("canvas");
+            var pincel = pantalla.getContext("2d");
+            pincel.fillStyle = "white";
+            pincel.fillRect(0, 0, 600, 400);
+
+
+
+            var radio = 10
+            var xaletorio;
+            var yaletorio;
+            function diseñarcircunferencia(x, y, radio, color) {
+
+
+                pincel.fillStyle = color;
+                pincel.beginPath();
+                pincel.arc(x, y, radio, 0, 2 * Math.PI)
+                pincel.fill();
+
+            }
+            function limpiarpantallla() {
+                pincel.clearRect(0, 0, 600, 400)
+
+
+
+            }
+            var x = 0;
+
+            function diseñarobjetivo(x, y) {
+
+
+                diseñarcircunferencia(x, y, radio + 20, "red");
+                diseñarcircunferencia(x, y, radio + 10, "white");
+                diseñarcircunferencia(x, y, radio, "red");
+            }
+
+            function sortearposicion(maximo) {
+
+                return Math.floor(Math.random() * maximo);
+
+
+            }
+
+
+            function actualizarpantalla() {
+
+                limpiarpantallla()
+                xaletorio = sortearposicion(600);
+                yaletorio = sortearposicion(400);
+                diseñarobjetivo(xaletorio, yaletorio)
+                x++;
+
+
+            }
+
+setInterval(actualizarpantalla,1000);
+
+            function dispara(evento){
+                var x = evento.pagex - pantalla.offsetLeft;
+                var y = evento.pagey - pantalla.offsetTop;
+                if ((x < xaletorio + radio)  &&
+                   (x > xaletorio - radio) &&
+                   (y < yaletorio + radio) &&
+                   (y > yaletorio - radio)) {
+                   
+
+                    alert("tiro certero");
+                }
+
+            }
+
+          
+
+            pantalla.onclick =dispara;
+
+
+        </script>
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

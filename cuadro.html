@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>bandera  </h1>
+
+
+
+    <canvas width="600" height="400"></canvas>
+    
+    <script>
+    function dibujarcuadro(x,y,color)
+    {
+    var pantalla =document.querySelector("canvas");
+    var pincel = pantalla.getContext("2d");
+    pincel.fillStyle = color;
+    pincel.fillRect(x,y,50,50);
+    pincel.strokeStyle = "black";
+    pincel.strokeRect(x,y,50,50);
+    
+    }
+
+    /*
+    var x=0;
+    while(x < 600) 
+    
+    
+    {
+
+    dibujarcuadro(x,0,"red");
+    dibujarcuadro(x,50,"yellow");
+    dibujarcuadro(x,100,"green");
+    x=x+50;
+
+    }
+    */
+
+
+    for (var x=0; x < 600;x=x+50 ) {
+        
+        dibujarcuadro(x,0,"red");
+        dibujarcuadro(x,50,"yellow");
+        dibujarcuadro(x,100,"green");
+        
+    }
+ 
+
+
+
+
+    
+    </script>
+
+
+
+
+
+
+
+</body>
+</html>

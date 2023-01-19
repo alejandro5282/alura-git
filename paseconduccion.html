@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>PASE DE CONDUCCION </title>
+</head>
+
+<body>
+    <h1>PASE DE CONDUCCION</h1>
+
+    
+
+    <script>
+        function saltarLinea() {
+            document.write("<br>");
+        }
+    
+        function imprimir(frase) {
+            document.write(frase);
+            saltarLinea();
+        }
+    
+        var edad = parseInt(prompt("¿Cuál es tu edad?"));
+        var tieneLicencia = prompt("¿Tienes licencia? Responde SI o NO");
+    
+        if((edad >= 18) && (tieneLicencia == "SI")) {
+                imprimir("Puedes conducir");
+            }
+    
+        else {
+            imprimir("No puedes conducir");
+        }
+    
+    </script>
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>
